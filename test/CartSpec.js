@@ -23,4 +23,13 @@ describe('Cart', () => {
     expect(cart.total()).to.be.equal(34);
   });
 
+  it('knows to multiply total by quantity', () => {
+    const cart = new Cart();
+    const product = {
+      price: 34,
+    };
+    cart.add(product, 5);
+    expect(cart.total()).to.be.equal(170);
+  });
+
 });

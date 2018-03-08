@@ -4,8 +4,8 @@ class Cart {
     this.totalSum = 0;
   }
 
-  add(product) {
-    this.totalSum += product.price;
+  add(product, qty = 1) {
+    this.totalSum += product.price * qty;
   }
 
   total() {
