@@ -4,6 +4,10 @@ class Cart {
     return this;
   }
 
+  total() {
+    return 0;
+  }
+
 }
 
 export default Cart;
