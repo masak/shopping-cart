@@ -14,4 +14,13 @@ describe('Cart', () => {
     expect(cart.total()).to.be.equal(0);
   });
 
+  it('reports a different total after add', () => {
+    const cart = new Cart();
+    const product = {
+      price: 34,
+    };
+    cart.add(product);
+    expect(cart.total()).to.be.equal(34);
+  });
+
 });

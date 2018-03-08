@@ -1,11 +1,15 @@
 class Cart {
 
-  add() {
-    return this;
+  constructor() {
+    this.totalSum = 0;
+  }
+
+  add(product) {
+    this.totalSum += product.price;
   }
 
   total() {
-    return this && 0;
+    return this.totalSum;
   }
 
 }
