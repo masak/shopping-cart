@@ -1,9 +1,7 @@
 class Cart {
 
-  constructor() {
-  }
-
   add() {
+    return this;
   }
 
 }

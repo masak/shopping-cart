@@ -1,1 +1,1 @@
-export Cart from './Cart.js';
+export Cart from './Cart';
