@@ -32,4 +32,34 @@ describe('Cart', () => {
     expect(cart.total()).to.be.equal(170);
   });
 
+  it('can give back all the products', () => {
+    const cart = new Cart();
+    const product = {
+      price: 34,
+    };
+    cart.add(product);
+    expect(JSON.stringify(cart.lineItems())).to.be.equal(JSON.stringify([{
+      product: {
+        price: 34,
+      },
+      qty: 1,
+    }]));
+  });
+
+  it('can give back all the products', () => {
+    const cart = new Cart();
+    const product = {
+      price: 34,
+    };
+    cart.add(product);
+    const lineItems = cart.lineItems();
+    lineItems.push({ price: 50 });
+    expect(JSON.stringify(cart.lineItems())).to.be.equal(JSON.stringify([{
+      product: {
+        price: 34,
+      },
+      qty: 1,
+    }]));
+  });
+
 });

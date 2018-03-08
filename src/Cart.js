@@ -1,15 +1,19 @@
 class Cart {
 
   constructor() {
-    this.totalSum = 0;
+    this.items = [];
   }
 
   add(product, qty = 1) {
-    this.totalSum += product.price * qty;
+    this.items.push({ product, qty });
   }
 
   total() {
-    return this.totalSum;
+    return this.items.reduce((acc, item) => acc + (item.product.price * item.qty), 0);
+  }
+
+  lineItems() {
+    return [...this.items];
   }
 
 }
